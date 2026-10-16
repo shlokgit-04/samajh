@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samajh — understand your paperwork</title>
+  <meta name="description" content="Samajh reads confusing Indian documents and explains them in plain language, and answers questions about government forms from a verified knowledge base." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3EEE3'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23B8371F' font-family='serif'%3E%E0%A4%B8%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="wordmark">
+      <span class="wordmark-latin">Samajh</span>
+      <span class="wordmark-deva" lang="hi">समझ</span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Answer language">
+      <button class="lang-toggle is-active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-toggle" data-lang="hi" aria-pressed="false" lang="hi">हिं</button>
+      <button class="lang-toggle" data-lang="mr" aria-pressed="false" lang="mr">मरा</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Modes">
+    <button class="tab is-active" id="tab-doc" role="tab" aria-selected="true" aria-controls="panel-doc">
+      Read a document
+    </button>
+    <button class="tab" id="tab-chat" role="tab" aria-selected="false" aria-controls="panel-chat">
+      Ask about a form
+    </button>
+  </nav>
+
+  <main>
+    <!-- ============ READ A DOCUMENT ============ -->
+    <section class="panel is-active" id="panel-doc" role="tabpanel" aria-labelledby="tab-doc">
+      <div class="doc-grid">
+        <aside class="doc-side">
+          <div class="drop-tray" id="drop-tray" tabindex="0" role="button"
+               aria-label="Upload a document image: drag and drop, click, paste, or use your phone camera">
+            <p class="drop-title">Drop the document here</p>
+            <p class="drop-hint">A bill, notice, agreement, letter or circular.<br />
+              Drag and drop, click to choose, paste from clipboard,
+              or <label class="drop-camera" for="file-input">use your phone camera</label>.</p>
+            <input type="file" id="file-input" accept="image/*" hidden />
+          </div>
+          <div class="paper-frame" id="paper-frame" hidden>
+            <img id="paper-img" alt="The document you uploaded" />
+            <button class="paper-change" id="paper-change" type="button">Choose a different document</button>
+          </div>
+          <p class="side-note">Processed in memory. Nothing is stored, nothing is saved, no account needed.</p>
+        </aside>
+
+        <article class="doc-reading" id="doc-reading" aria-live="polite">
+          <div class="empty-state">
+            <p class="empty-kicker">The reading desk</p>
+            <p class="empty-lede">Upload a document on the left. Samajh reads it with Gemma 4 and explains what it says, what it asks of you, and by when, in your language.</p>
+          </div>
+          <div class="loading" id="doc-loading" hidden>
+            <span class="loading-rule"></span>
+            <p>Reading the document…</p>
+          </div>
+          <div class="doc-result" id="doc-result" hidden></div>
+          <div class="error-note" id="doc-error" hidden></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ ASK ABOUT A FORM ============ -->
+    <section class="panel" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat" hidden>
+      <div class="chat-wrap">
+        <div class="transcript" id="transcript" aria-live="polite">
+          <div class="transcript-row">
+            <span class="speaker">SAMAJH</span>
+            <div class="transcript-text">
+              <p>Ask about a government form. Say what you need, the way you would say it out loud.
+              I answer only from a verified list of five forms, and I will tell you honestly when I
+              do not have verified information.</p>
+            </div>
+          </div>
+        </div>
+        <div class="suggest" id="suggest" aria-label="Supported forms"></div>
+        <form class="chat-form" id="chat-form">
+          <label class="visually-hidden" for="chat-input">Your question</label>
+          <input type="text" id="chat-input" autocomplete="off"
+                 placeholder="e.g. I need a passport / how do I update my Aadhaar address" />
+          <button type="submit" id="chat-send">Ask</button>
+        </form>
+        <div class="loading" id="chat-loading" hidden>
+          <span class="loading-rule"></span>
+          <p>Checking the records…</p>
+        </div>
+        <div class="error-note" id="chat-error" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footer-model">Powered by Gemma 4 via the Gemini API</span>
+  </footer>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

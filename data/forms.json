@@ -1,0 +1,123 @@
+[
+  {
+    "id": "pan-new",
+    "name": "PAN card (new application)",
+    "mode": "home",
+    "mode_reason": "The application, e-KYC with Aadhaar, fee payment and e-PAN download are all online; no centre visit is required.",
+    "documents": [
+      "Aadhaar card (used for e-KYC and as identity proof)",
+      "A recent passport-size photograph (digital upload)",
+      "A scanned signature (digital upload)",
+      "Mobile number linked to Aadhaar, for the OTP",
+      "An active email address"
+    ],
+    "steps": [
+      "Open the official PAN application portal and choose New PAN for an Indian citizen (Form 49A) with e-KYC and e-sign.",
+      "Fill the form with your name exactly as printed on your Aadhaar, plus date of birth and contact details.",
+      "Verify with the OTP sent to your Aadhaar-linked mobile number.",
+      "Upload your photograph and signature in the sizes the portal asks for.",
+      "Pay the application fee shown at checkout on the official portal.",
+      "Note the acknowledgement number, track the status, and download the e-PAN PDF once issued."
+    ],
+    "fee_note": "See the official portal for the current fee.",
+    "official_url": "https://www.onlineservices.nsdl.com/paon/",
+    "source_urls": ["https://www.incometax.gov.in/", "https://www.onlineservices.nsdl.com/paon/"],
+    "needs_verification": true
+  },
+  {
+    "id": "aadhaar-update",
+    "name": "Aadhaar (update address or demographic details)",
+    "mode": "home",
+    "mode_reason": "Address and demographic updates can be requested online on the myAadhaar portal with document upload; no centre visit is needed for an online update.",
+    "documents": [
+      "Your Aadhaar number (12 digits) or Enrolment ID",
+      "The mobile number registered with Aadhaar, to receive the OTP",
+      "One valid proof of address (recent electricity or water bill, bank passbook, rent agreement, passport, or another document from the UIDAI list)",
+      "For a name or date-of-birth change, the supporting proof listed on the portal"
+    ],
+    "steps": [
+      "Open myAadhaar and log in with your Aadhaar number and the OTP sent to your registered mobile.",
+      "Choose Update Aadhaar Online and select the field you want to change (address, name, date of birth and so on).",
+      "Enter the new details exactly as they appear on your proof document.",
+      "Upload a clear scan of the proof document in the accepted format and size.",
+      "Submit and note the Update Request Number (URN) shown on the screen.",
+      "Track the request online. If it is rejected or needs biometric confirmation, visit an Aadhaar centre."
+    ],
+    "fee_note": "See the official portal for the current fee.",
+    "official_url": "https://myaadhaar.uidai.gov.in",
+    "source_urls": ["https://uidai.gov.in/", "https://myaadhaar.uidai.gov.in"],
+    "needs_verification": true
+  },
+  {
+    "id": "voter-new",
+    "name": "Voter ID (new registration, Form 6)",
+    "mode": "partly_home",
+    "mode_reason": "Form 6 is filled and submitted online with document uploads, but a Booth Level Officer may visit or call for verification before your name is added to the roll.",
+    "documents": [
+      "One proof of age (birth certificate, school leaving certificate, Class 10 marksheet, or passport)",
+      "One proof of current address (electricity bill, water bill, rent agreement, bank passbook, or passport)",
+      "A recent passport-size photograph (digital upload)"
+    ],
+    "steps": [
+      "Create an account on the Voters' Service Portal with your mobile number.",
+      "Fill Form 6 online with your details and current constituency.",
+      "Upload your age proof, address proof and photograph.",
+      "Submit and save the acknowledgement number you receive.",
+      "Track the application online and respond if the Booth Level Officer contacts you for verification.",
+      "Once approved, download the e-EPIC voter card or collect the physical card."
+    ],
+    "fee_note": "Registration is generally free; see the official portal.",
+    "official_url": "https://voters.eci.gov.in",
+    "source_urls": ["https://voters.eci.gov.in", "https://www.eci.gov.in"],
+    "needs_verification": true
+  },
+  {
+    "id": "passport-new",
+    "name": "Passport (fresh application)",
+    "mode": "partly_home",
+    "mode_reason": "The form and appointment booking are online, but you must appear in person at a Passport Seva Kendra for document verification, photograph and biometrics.",
+    "documents": [
+      "Proof of address (Aadhaar card, electricity bill, bank passbook, rent agreement, or another document from the portal's list)",
+      "Proof of date of birth (birth certificate, Class 10 certificate, or another document from the portal's list)",
+      "Aadhaar card",
+      "Old passport or citizenship documents, if applicable"
+    ],
+    "steps": [
+      "Register on the Passport Seva portal and log in.",
+      "Fill the online application form carefully, matching your documents exactly.",
+      "Pay the fee shown on the portal and book an appointment at a Passport Seva Kendra or Post Office PSK.",
+      "Save or print the appointment receipt (ARN) and application receipt.",
+      "Visit the Passport Seva Kendra on your appointment day with original documents and photocopies.",
+      "Track the application online; police verification is usually scheduled after your visit."
+    ],
+    "fee_note": "See the official portal for the current fee.",
+    "official_url": "https://www.passportindia.gov.in",
+    "source_urls": ["https://www.passportindia.gov.in"],
+    "needs_verification": true
+  },
+  {
+    "id": "learners-licence",
+    "name": "Learner's Licence",
+    "mode": "partly_home",
+    "mode_reason": "Application, fee payment and in many states the test can be completed online through Parivahan, but a visit to the RTO is needed for document verification and biometrics before the licence is issued.",
+    "documents": [
+      "Proof of age (birth certificate, Class 10 certificate, passport, or similar)",
+      "Proof of address (Aadhaar card, electricity bill, rent agreement, or similar)",
+      "Passport-size photographs",
+      "Aadhaar number, for e-KYC where your state supports it",
+      "Form 1 self-declaration of physical fitness (Form 1A medical certificate where required)"
+    ],
+    "steps": [
+      "Open the Parivahan Sarathi portal and choose Apply for Learner Licence.",
+      "Complete e-KYC with your Aadhaar where supported, or apply with document upload.",
+      "Fill the application, upload documents and photographs, and pay the fee shown on the portal.",
+      "Book the learner's test slot; in many states the test can be taken online from home.",
+      "Pass the test on road signs and traffic rules.",
+      "Visit the RTO as instructed for document verification and biometrics, then download or collect your licence."
+    ],
+    "fee_note": "See the official portal for the current fee.",
+    "official_url": "https://parivahan.gov.in",
+    "source_urls": ["https://parivahan.gov.in"],
+    "needs_verification": true
+  }
+]

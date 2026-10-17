@@ -177,9 +177,9 @@ async def chat(req: ChatRequest, request: Request, user=Depends(optional_user)):
     started = time.monotonic()
 
     for _round in range(4):
-        if _round and time.monotonic() - started > 45:
+        if _round and time.monotonic() - started > 90:
             break
-        remaining = 45 - (time.monotonic() - started)
+        remaining = 90 - (time.monotonic() - started)
         try:
             text, trace = await asyncio.wait_for(
                 asyncio.to_thread(client.call, contents), timeout=max(6, remaining)

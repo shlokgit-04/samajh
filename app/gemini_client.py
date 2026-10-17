@@ -161,7 +161,9 @@ class KeyPool:
                     if kind == "invalid_key":
                         self.note_disabled(idx)
                         continue
-                    # server / timeout / request: one retry on the same key, then rotate
+                    if kind == "timeout":
+                        continue  # stalled upstream: rotate now instead of retrying the same key
+                    # server / request: one retry on the same key, then rotate
                     try:
                         result = request_fn(model, key)
                         self.advance()
@@ -191,7 +193,7 @@ class GemmaClient:
             if client is None:
                 client = genai.Client(
                     api_key=key,
-                    http_options=types.HttpOptions(timeout=120 * 1000),
+                    http_options=types.HttpOptions(timeout=12 * 1000),
                 )
                 self._clients[key] = client
             return client

@@ -3,6 +3,9 @@ import datetime
 import io
 import json
 import os
+import time
+
+import asyncio
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse
@@ -93,7 +96,7 @@ async def analyze(image: UploadFile = File(...), lang: str = Form("en")):
         types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"),
         prompts.analyze_prompt(config.LANG_NAMES[lang]),
     ]
-    data, text, trace = client.generate_json(contents)
+    data, text, trace = await asyncio.to_thread(client.generate_json, contents)
     if data is None:
         raise HTTPException(status_code=502, detail="The model returned something unreadable. Please try again.")
     if "error" in data and data["error"] == "unreadable":
@@ -133,9 +136,12 @@ async def chat(req: ChatRequest):
     trace_tool_calls = []
     last_trace = None
     total_latency = 0
+    started = time.monotonic()
 
     for _round in range(4):
-        text, trace = client.call(contents)
+        if _round and time.monotonic() - started > 70:
+            break
+        text, trace = await asyncio.to_thread(client.call, contents)
         last_trace = trace
         total_latency += trace.get("latency_ms", 0)
         data = extract_json(text)

@@ -179,7 +179,21 @@ async def chat(req: ChatRequest, request: Request, user=Depends(optional_user)):
     for _round in range(4):
         if _round and time.monotonic() - started > 45:
             break
-        text, trace = await asyncio.to_thread(client.call, contents)
+        remaining = 45 - (time.monotonic() - started)
+        try:
+            text, trace = await asyncio.wait_for(
+                asyncio.to_thread(client.call, contents), timeout=max(6, remaining)
+            )
+        except asyncio.TimeoutError:
+            payload = {
+                "type": "text",
+                "text": "The AI service is briefly overloaded. Please try again in a minute.",
+                "trace": {**(last_trace or {}), "latency_ms": total_latency, "tool_calls": trace_tool_calls},
+            }
+            db.log_usage(kind="chat", lang=req.lang, model=(last_trace or {}).get("model"),
+                         key_slot=(last_trace or {}).get("key_slot"),
+                         latency_ms=total_latency, ok=False)
+            return payload
         last_trace = trace
         total_latency += trace.get("latency_ms", 0)
         data = extract_json(text)

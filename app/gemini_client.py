@@ -163,19 +163,11 @@ class KeyPool:
                         continue
                     if kind == "timeout":
                         continue  # stalled upstream: rotate now instead of retrying the same key
-                    # server / request: one retry on the same key, then rotate
-                    try:
-                        result = request_fn(model, key)
-                        self.advance()
-                        return result, trace
-                    except Exception as exc2:  # noqa: BLE001
-                        last_error = exc2
-                        kind2 = classify_error(exc2)
-                        if kind2 == "rate_limit":
-                            self.note_rate_limit(idx)
-                        elif kind2 == "invalid_key":
-                            self.note_disabled(idx)
-                        continue
+                    # server / request: rotate to the next key at once. Google's
+                    # free Gemma endpoint fails long prompts fast (500 INTERNAL)
+                    # and is flaky per attempt, so the next key is as good a bet
+                    # as a same-key retry, at half the worst-case latency.
+                    continue
         raise PoolExhausted(last_error)
 
 
@@ -193,7 +185,7 @@ class GemmaClient:
             if client is None:
                 client = genai.Client(
                     api_key=key,
-                    http_options=types.HttpOptions(timeout=30 * 1000),
+                    http_options=types.HttpOptions(timeout=12 * 1000),
                 )
                 self._clients[key] = client
             return client

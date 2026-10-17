@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samajh — understand your paperwork</title>
-  <meta name="description" content="Samajh reads confusing Indian documents and explains them in plain language, and answers questions about government forms from a verified knowledge base." />
+  <title>Samajh — understand your paperwork, track the process</title>
+  <meta name="description" content="Samajh reads confusing Indian documents, guides you through government forms, tracks your applications, and finds schemes and centres for farmers, government employees, doctors and every citizen. Private by design: documents are encrypted and never sold." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,55 +12,90 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3EEE3'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23B8371F' font-family='serif'%3E%E0%A4%B8%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
   <header class="masthead">
     <div class="wordmark">
       <span class="wordmark-latin">Samajh</span>
       <span class="wordmark-deva" lang="hi">समझ</span>
     </div>
-    <div class="lang-switch" role="group" aria-label="Answer language">
-      <button class="lang-toggle is-active" data-lang="en" aria-pressed="true">EN</button>
-      <button class="lang-toggle" data-lang="hi" aria-pressed="false" lang="hi">हिं</button>
-      <button class="lang-toggle" data-lang="mr" aria-pressed="false" lang="mr">मरा</button>
+
+    <div class="header-tools">
+      <label class="visually-hidden" for="lang-select">Answer language</label>
+      <select id="lang-select" class="lang-select" aria-label="Answer language"></select>
+
+      <button id="comfort-btn" class="tool-btn" type="button" aria-haspopup="dialog" data-i18n-title="comfort.title" title="Comfort settings">
+        <span aria-hidden="true">Aa</span><span class="visually-hidden" data-i18n="comfort.title">Comfort settings</span>
+      </button>
+
+      <button id="alerts-btn" class="tool-btn" type="button" data-i18n-title="alerts.title" title="Alerts and warnings">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+        <span class="badge" id="alerts-badge" hidden>0</span>
+        <span class="visually-hidden" data-i18n="alerts.title">Alerts and warnings</span>
+      </button>
+
+      <button id="account-btn" class="tool-btn tool-btn-wide" type="button" aria-haspopup="dialog">
+        <span id="account-label" data-i18n="nav.signin">Sign in</span>
+      </button>
     </div>
   </header>
 
-  <nav class="tabs" role="tablist" aria-label="Modes">
-    <button class="tab is-active" id="tab-doc" role="tab" aria-selected="true" aria-controls="panel-doc">
-      Read a document
-    </button>
-    <button class="tab" id="tab-chat" role="tab" aria-selected="false" aria-controls="panel-chat">
-      Ask about a form
-    </button>
+  <!-- ============ TABS ============ -->
+  <nav class="tabs" role="tablist" aria-label="Modes" id="tabs">
+    <button class="tab is-active" id="tab-doc" role="tab" aria-selected="true" aria-controls="panel-doc" data-i18n="tab.doc">Read a document</button>
+    <button class="tab" id="tab-forms" role="tab" aria-selected="false" aria-controls="panel-forms" data-i18n="tab.forms">Forms &amp; guide</button>
+    <button class="tab" id="tab-track" role="tab" aria-selected="false" aria-controls="panel-track" data-i18n="tab.track">My paperwork</button>
+    <button class="tab" id="tab-foryou" role="tab" aria-selected="false" aria-controls="panel-foryou" data-i18n="tab.foryou">For you</button>
+    <button class="tab" id="tab-centres" role="tab" aria-selected="false" aria-controls="panel-centres" data-i18n="tab.centres">Find a centre</button>
   </nav>
 
-  <main>
+  <main id="main">
     <!-- ============ READ A DOCUMENT ============ -->
     <section class="panel is-active" id="panel-doc" role="tabpanel" aria-labelledby="tab-doc">
       <div class="doc-grid">
         <aside class="doc-side">
           <div class="drop-tray" id="drop-tray" tabindex="0" role="button"
                aria-label="Upload a document image: drag and drop, click, paste, or use your phone camera">
-            <p class="drop-title">Drop the document here</p>
-            <p class="drop-hint">A bill, notice, agreement, letter or circular.<br />
-              Drag and drop, click to choose, paste from clipboard,
-              or <label class="drop-camera" for="file-input">use your phone camera</label>.</p>
-            <input type="file" id="file-input" accept="image/*" hidden />
+            <p class="drop-title" data-i18n="doc.dropTitle">Drop the document here</p>
+            <p class="drop-hint">
+              <span data-i18n="doc.dropHint">A bill, notice, agreement, letter or circular. Drag and drop, click, paste, or</span>
+              <label class="drop-camera" for="file-input" data-i18n="doc.camera">use your phone camera</label>.
+            </p>
+            <input type="file" id="file-input" accept="image/*" capture="environment" hidden />
           </div>
+
           <div class="paper-frame" id="paper-frame" hidden>
             <img id="paper-img" alt="The document you uploaded" />
-            <button class="paper-change" id="paper-change" type="button">Choose a different document</button>
+            <div class="paper-actions">
+              <button class="link-btn" id="paper-change" type="button" data-i18n="doc.change">Choose a different document</button>
+              <button class="link-btn" id="paper-save" type="button" hidden data-i18n="doc.saveVault">Save to my vault</button>
+              <button class="link-btn" id="paper-pdf" type="button" data-i18n="doc.pdf">Download checklist PDF</button>
+            </div>
           </div>
-          <p class="side-note">Processed in memory. Nothing is stored, nothing is saved, no account needed.</p>
+
+          <label class="save-toggle" id="save-toggle-wrap" hidden>
+            <input type="checkbox" id="save-toggle" />
+            <span data-i18n="doc.saveToggle">Keep this scan in my encrypted vault (auto-deletes after 30 days)</span>
+          </label>
+
+          <p class="side-note" data-i18n="doc.privacy">Processed in memory. If you sign in and save, the scan is encrypted with a key only your account can open.</p>
+
+          <div class="vault" id="vault" hidden>
+            <p class="section-label" data-i18n="vault.title">My vault</p>
+            <div id="vault-list"></div>
+            <button class="link-btn danger" id="vault-delete-all" type="button" data-i18n="vault.deleteAll">Delete all stored scans</button>
+          </div>
         </aside>
 
         <article class="doc-reading" id="doc-reading" aria-live="polite">
           <div class="empty-state">
-            <p class="empty-kicker">The reading desk</p>
-            <p class="empty-lede">Upload a document on the left. Samajh reads it with Gemma 4 and explains what it says, what it asks of you, and by when, in your language.</p>
+            <p class="empty-kicker" data-i18n="doc.kicker">The reading desk</p>
+            <p class="empty-lede" data-i18n="doc.lede">Upload a document on the left. Samajh reads it with Gemma 4 and explains what it says, what it asks of you, and by when — in your language.</p>
           </div>
           <div class="loading" id="doc-loading" hidden>
             <span class="loading-rule"></span>
-            <p>Reading the document…</p>
+            <p data-i18n="doc.loading">Reading the document…</p>
           </div>
           <div class="doc-result" id="doc-result" hidden></div>
           <div class="error-note" id="doc-error" hidden></div>
@@ -68,38 +103,263 @@
       </div>
     </section>
 
-    <!-- ============ ASK ABOUT A FORM ============ -->
-    <section class="panel" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat" hidden>
+    <!-- ============ FORMS & GUIDE ============ -->
+    <section class="panel" id="panel-forms" role="tabpanel" aria-labelledby="tab-forms" hidden>
       <div class="chat-wrap">
         <div class="transcript" id="transcript" aria-live="polite">
           <div class="transcript-row">
             <span class="speaker">SAMAJH</span>
             <div class="transcript-text">
-              <p>Ask about a government form. Say what you need, the way you would say it out loud.
-              I answer only from a verified list of five forms, and I will tell you honestly when I
-              do not have verified information.</p>
+              <p data-i18n="forms.intro">Ask about a government form, scheme or office. Samajh answers only from a verified knowledge base, tells you which documents are compulsory and which are optional, what extra costs to expect, where to go, and warns you about scams. It says honestly when it does not have verified information.</p>
             </div>
           </div>
         </div>
         <div class="suggest" id="suggest" aria-label="Supported forms"></div>
         <form class="chat-form" id="chat-form">
-          <label class="visually-hidden" for="chat-input">Your question</label>
+          <label class="visually-hidden" for="chat-input" data-i18n="forms.ask">Your question</label>
           <input type="text" id="chat-input" autocomplete="off"
                  placeholder="e.g. I need a passport / how do I update my Aadhaar address" />
-          <button type="submit" id="chat-send">Ask</button>
+          <button type="submit" id="chat-send" data-i18n="forms.send">Ask</button>
         </form>
         <div class="loading" id="chat-loading" hidden>
           <span class="loading-rule"></span>
-          <p>Checking the records…</p>
+          <p data-i18n="forms.checking">Checking the records…</p>
         </div>
         <div class="error-note" id="chat-error" hidden></div>
+      </div>
+    </section>
+
+    <!-- ============ MY PAPERWORK (TRACKER) ============ -->
+    <section class="panel" id="panel-track" role="tabpanel" aria-labelledby="tab-track" hidden>
+      <div class="track-wrap">
+        <div class="signin-gate" id="track-gate">
+          <p data-i18n="track.gate">Sign in to track your applications — the status of the process, deadlines, warnings and what to do next, so the paperwork keeps moving.</p>
+          <button class="primary-btn" id="track-signin" type="button" data-i18n="nav.signin">Sign in</button>
+        </div>
+
+        <div id="track-body" hidden>
+          <div class="track-head">
+            <h2 data-i18n="track.title">Applications in progress</h2>
+            <button class="primary-btn" id="app-new-btn" type="button" data-i18n="track.add">Track new paperwork</button>
+          </div>
+
+          <form class="app-form" id="app-form" hidden>
+            <div class="form-row">
+              <label for="app-form-select" data-i18n="track.formLabel">What are you applying for?</label>
+              <select id="app-form-select">
+                <option value="" data-i18n="track.custom">Something else (type below)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="app-name" data-i18n="track.nameLabel">Name (if not in the list)</label>
+              <input id="app-name" maxlength="200" />
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="app-office" data-i18n="track.officeLabel">Office / centre involved</label>
+                <input id="app-office" maxlength="200" placeholder="e.g. Passport Seva Kendra, Malad" />
+              </div>
+              <div>
+                <label for="app-ref" data-i18n="track.refLabel">Reference / acknowledgement number</label>
+                <input id="app-ref" maxlength="120" />
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="app-date" data-i18n="track.dateLabel">Target date (YYYY-MM-DD)</label>
+                <input id="app-date" type="date" />
+              </div>
+              <div>
+                <label for="app-remind" data-i18n="track.remindLabel">Warn me this many days before</label>
+                <input id="app-remind" type="number" min="0" max="60" value="3" />
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="app-notes" data-i18n="track.notesLabel">Notes for yourself</label>
+              <textarea id="app-notes" maxlength="2000" rows="2"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="primary-btn" type="submit" data-i18n="track.save">Start tracking</button>
+              <button class="link-btn" id="app-cancel" type="button" data-i18n="common.cancel">Cancel</button>
+            </div>
+          </form>
+
+          <div class="alerts-strip" id="alerts-strip"></div>
+          <div class="app-list" id="app-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOR YOU (RECOMMENDATIONS) ============ -->
+    <section class="panel" id="panel-foryou" role="tabpanel" aria-labelledby="tab-foryou" hidden>
+      <div class="foryou-wrap">
+        <div class="signin-gate" id="foryou-gate">
+          <p data-i18n="foryou.gate">Sign in to get recommendations for your situation — farmer, government employee, doctor, student, senior, worker or business owner. Schemes, benefits, extra costs and the forms to fill.</p>
+          <button class="primary-btn" id="foryou-signin" type="button" data-i18n="nav.signin">Sign in</button>
+        </div>
+
+        <div id="foryou-body" hidden>
+          <div class="foryou-head">
+            <h2 data-i18n="foryou.title">Schemes and benefits for you</h2>
+            <label class="role-pick">
+              <span data-i18n="foryou.iam">I am a</span>
+              <select id="role-select"></select>
+            </label>
+          </div>
+          <div id="foryou-list" class="scheme-list"></div>
+          <h3 id="foryou-also-title" data-i18n="foryou.also" hidden>Also useful for everyone</h3>
+          <div id="foryou-also" class="scheme-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIND A CENTRE ============ -->
+    <section class="panel" id="panel-centres" role="tabpanel" aria-labelledby="tab-centres" hidden>
+      <div class="centres-wrap">
+        <h2 data-i18n="centres.title">Where do I have to go?</h2>
+        <p class="centres-lede" data-i18n="centres.lede">Search the office directory by service and area. This is a sample directory — always confirm the address and hours on the official portal before travelling.</p>
+        <form class="centres-filters" id="centres-filters">
+          <label>
+            <span data-i18n="centres.service">Service</span>
+            <select id="centre-service"></select>
+          </label>
+          <label>
+            <span data-i18n="centres.area">Area, district or state</span>
+            <input id="centre-area" placeholder="e.g. Pune, Bandra, Jaipur" />
+          </label>
+          <button class="primary-btn" type="submit" data-i18n="centres.search">Search centres</button>
+        </form>
+        <div class="centre-list" id="centre-list"></div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <span id="footer-model">Powered by Gemma 4 via the Gemini API</span>
+    <span class="footer-sep">·</span>
+    <button class="link-btn" id="footer-privacy" type="button" data-i18n="privacy.link">Privacy &amp; security</button>
   </footer>
+
+  <!-- ============ AUTH OVERLAY ============ -->
+  <div class="overlay" id="auth-overlay" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="dialog-close" id="auth-close" type="button" aria-label="Close">×</button>
+      <h2 id="auth-title" data-i18n="auth.title">Your Samajh account</h2>
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab is-active" id="auth-tab-login" type="button" data-i18n="auth.signin">Sign in</button>
+        <button class="auth-tab" id="auth-tab-register" type="button" data-i18n="auth.register">Create account</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label><span data-i18n="auth.email">Email</span><input type="email" id="login-email" autocomplete="email" required /></label>
+        <label><span data-i18n="auth.password">Password</span><input type="password" id="login-password" autocomplete="current-password" required /></label>
+        <button class="primary-btn" type="submit" data-i18n="auth.signin">Sign in</button>
+        <p class="auth-note" data-i18n="auth.note">Your scans are encrypted with a key only your account can open. You can export or erase everything from the Account panel.</p>
+      </form>
+
+      <form id="register-form" class="auth-form" hidden>
+        <label><span data-i18n="auth.name">Your name</span><input type="text" id="reg-name" maxlength="120" required /></label>
+        <label><span data-i18n="auth.email">Email</span><input type="email" id="reg-email" autocomplete="email" required /></label>
+        <label><span data-i18n="auth.password">Password</span><input type="password" id="reg-password" autocomplete="new-password" minlength="8" required /></label>
+        <label>
+          <span data-i18n="auth.role">I am a</span>
+          <select id="reg-role"></select>
+        </label>
+        <label><span data-i18n="auth.area">Area / district (for centres and recommendations)</span><input type="text" id="reg-area" maxlength="120" /></label>
+        <label class="consent-row">
+          <input type="checkbox" id="reg-consent" required />
+          <span data-i18n="auth.consent">I understand Samajh stores only what I choose to save, encrypted, and that I can delete my account and data at any time.</span>
+        </label>
+        <button class="primary-btn" type="submit" data-i18n="auth.register">Create account</button>
+      </form>
+      <div class="error-note" id="auth-error" hidden></div>
+    </div>
+  </div>
+
+  <!-- ============ ACCOUNT DRAWER ============ -->
+  <div class="overlay" id="account-overlay" hidden>
+    <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <button class="dialog-close" id="account-close" type="button" aria-label="Close">×</button>
+      <h2 id="account-title" data-i18n="account.title">Account &amp; privacy</h2>
+
+      <div id="account-signed-out">
+        <p data-i18n="account.signedOut">You are browsing as a guest. Nothing is stored unless you create an account. Sign in to keep an encrypted vault, track applications and get recommendations.</p>
+        <button class="primary-btn" id="account-signin" type="button" data-i18n="nav.signin">Sign in</button>
+      </div>
+
+      <div id="account-signed-in" hidden>
+        <p class="account-line"><strong id="account-name"></strong><br /><span id="account-email" class="muted"></span></p>
+        <form id="profile-form" class="auth-form">
+          <label><span data-i18n="auth.name">Your name</span><input type="text" id="pf-name" maxlength="120" /></label>
+          <label><span data-i18n="auth.role">I am a</span><select id="pf-role"></select></label>
+          <label><span data-i18n="auth.area">Area / district (for centres and recommendations)</span><input type="text" id="pf-area" maxlength="120" /></label>
+          <label><span data-i18n="auth.phone">Phone (optional)</span><input type="text" id="pf-phone" maxlength="20" /></label>
+          <button class="primary-btn" type="submit" data-i18n="account.saveProfile">Save profile</button>
+        </form>
+
+        <form id="password-form" class="auth-form">
+          <h3 data-i18n="account.changePassword">Change password</h3>
+          <label><span data-i18n="account.currentPassword">Current password</span><input type="password" id="pw-current" autocomplete="current-password" required /></label>
+          <label><span data-i18n="account.newPassword">New password (8+ characters)</span><input type="password" id="pw-new" autocomplete="new-password" minlength="8" required /></label>
+          <button class="primary-btn" type="submit" data-i18n="account.changePassword">Change password</button>
+        </form>
+
+        <div class="privacy-box">
+          <h3 data-i18n="account.privacyTitle">Privacy &amp; security</h3>
+          <ul id="privacy-list"></ul>
+        </div>
+
+        <div class="account-actions">
+          <button class="link-btn" id="export-btn" type="button" data-i18n="account.export">Download my data (JSON)</button>
+          <button class="link-btn" id="logout-btn" type="button" data-i18n="account.logout">Sign out</button>
+          <button class="link-btn danger" id="delete-account-btn" type="button" data-i18n="account.delete">Delete account and all data</button>
+        </div>
+      </div>
+      <div class="error-note" id="account-error" hidden></div>
+    </div>
+  </div>
+
+  <!-- ============ ALERTS DRAWER ============ -->
+  <div class="overlay" id="alerts-overlay" hidden>
+    <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="alerts-title">
+      <button class="dialog-close" id="alerts-close" type="button" aria-label="Close">×</button>
+      <h2 id="alerts-title" data-i18n="alerts.title">Alerts and warnings</h2>
+      <div id="alerts-list"></div>
+      <form id="alert-form" class="auth-form">
+        <h3 data-i18n="alerts.add">Set a reminder</h3>
+        <label><span data-i18n="alerts.what">What should we remind you about?</span><input type="text" id="alert-title" maxlength="200" required /></label>
+        <label><span data-i18n="alerts.when">Date (YYYY-MM-DD)</span><input type="date" id="alert-date" /></label>
+        <button class="primary-btn" type="submit" data-i18n="alerts.save">Save reminder</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ COMFORT DRAWER ============ -->
+  <div class="overlay" id="comfort-overlay" hidden>
+    <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="comfort-title">
+      <button class="dialog-close" id="comfort-close" type="button" aria-label="Close">×</button>
+      <h2 id="comfort-title" data-i18n="comfort.title">Comfort settings</h2>
+      <label class="comfort-row">
+        <span data-i18n="comfort.size">Text size</span>
+        <input type="range" id="comfort-size" min="90" max="140" step="5" />
+      </label>
+      <label class="comfort-row">
+        <input type="checkbox" id="comfort-contrast" />
+        <span data-i18n="comfort.contrast">High contrast</span>
+      </label>
+      <label class="comfort-row">
+        <input type="checkbox" id="comfort-spacing" />
+        <span data-i18n="comfort.spacing">Easy-reading spacing</span>
+      </label>
+      <label class="comfort-row">
+        <input type="checkbox" id="comfort-autospeak" />
+        <span data-i18n="comfort.autospeak">Read answers aloud automatically (text to speech)</span>
+      </label>
+      <p class="muted small" data-i18n="comfort.ttsNote">Text to speech uses your device's voices. You can also press "Read aloud" on any answer.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
 
   <script type="module" src="/app.js"></script>
 </body>

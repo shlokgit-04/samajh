@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+data/samajh.db
+data/samajh.db-*
+data/.secret.key
+data/scans/

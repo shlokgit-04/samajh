@@ -1,0 +1,610 @@
+[
+  {
+    "id": "pm-kisan-scheme",
+    "name": "PM-KISAN income support",
+    "profiles": ["farmer", "citizen"],
+    "summary": "Direct income support for landholding farmer families, paid in instalments to the bank account.",
+    "benefits": [
+      "Fixed cash instalments per year, transferred directly to the bank account",
+      "No middleman: money reaches the account with Aadhaar linkage",
+      "Status and instalment history visible on the official portal"
+    ],
+    "eligibility": [
+      "Landholding farmer family with cultivable land in the applicant's name",
+      "Not an income-tax payer, and not holding a constitutional post or high government office",
+      "Aadhaar-linked bank account in the applicant's own name"
+    ],
+    "extra_costs": [
+      "Registration is free",
+      "If land is inherited, mutation (namantaran) at the tehsil costs a nominal fee",
+      "CSC help, if you use one, may charge a small service fee"
+    ],
+    "where_to_go": {
+      "office": "Online (pmkisan.gov.in) or your nearest CSC / agriculture office",
+      "note": "Land record corrections happen at the tehsil / land records office"
+    },
+    "forms": ["pm-kisan"],
+    "steps": [
+      "Register on pmkisan.gov.in with Aadhaar and OTP.",
+      "Check the beneficiary status page for your name.",
+      "Complete patwari verification if the portal shows it pending.",
+      "Keep the bank account Aadhaar-linked so instalments do not bounce."
+    ],
+    "documents": ["Aadhaar card", "Land records (khatauni / 7-12 extract)", "Bank passbook linked to Aadhaar"],
+    "warnings": [
+      "One family, one beneficiary — duplicate names get rejected",
+      "No fee is charged for registration; beware of touts promising faster payment"
+    ],
+    "official_url": "https://pmkisan.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "pmfby-crop-insurance",
+    "name": "Pradhan Mantri Fasal Bima Yojana (crop insurance)",
+    "profiles": ["farmer"],
+    "summary": "Crop insurance against drought, flood, pests and other natural losses, with a low farmer premium share.",
+    "benefits": [
+      "Compensation for crop loss due to natural calamities",
+      "Premium shared between farmer and government; farmer pays a small share",
+      "Localised calamity and post-harvest losses covered under conditions"
+    ],
+    "eligibility": [
+      "Farmers growing notified crops in notified areas, including sharecroppers and tenant farmers with documents",
+      "Enrolment before the cut-off date of the season (Kharif / Rabi)"
+    ],
+    "extra_costs": [
+      "Farmer's premium share (small percentage of the sum insured) for notified crops",
+      "Bank charges, if any, for the linked account"
+    ],
+    "where_to_go": {
+      "office": "Your bank branch, CSC, or the PMFBY portal",
+      "note": "Loanee farmers are enrolled by the bank itself; non-loanee farmers enrol at the bank / CSC / portal"
+    },
+    "forms": [],
+    "steps": [
+      "Check the crop and area notification for your season on pmfby.gov.in.",
+      "Enrol through your bank, CSC or the portal before the cut-off date.",
+      "Keep the premium receipt and policy details safe.",
+      "If a loss occurs, report it within 72 hours through the crop insurance app or the bank / agriculture office."
+    ],
+    "documents": ["Aadhaar card", "Bank passbook", "Land records or tenancy documents", "Sowing certificate / declaration where asked"],
+    "warnings": [
+      "Enrolment closes at the cut-off date; late applications are not accepted",
+      "Report crop loss within 72 hours — delays can forfeit the claim"
+    ],
+    "official_url": "https://pmfby.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "kcc-credit-card",
+    "name": "Kisan Credit Card (KCC) — farm credit",
+    "profiles": ["farmer"],
+    "summary": "Low-interest credit for crop inputs and household needs under a single card, renewed periodically.",
+    "benefits": [
+      "Working capital for seeds, fertiliser, and other inputs",
+      "Concessional interest on crop loans when repaid on time",
+      "Higher limits for dairy, fisheries and animal husbandry activities"
+    ],
+    "eligibility": [
+      "Owner cultivator, tenant farmer, sharecropper or oral lessee with land documents",
+      "Self-help groups and joint liability groups engaged in farming"
+    ],
+    "extra_costs": [
+      "No processing charge for small crop loans under the interest subvention scheme",
+      "Interest applies if the loan is not repaid within the due period"
+    ],
+    "where_to_go": {
+      "office": "Your bank branch (any bank that offers KCC)",
+      "note": "Take the filled application and the branch manager will guide the documentation"
+    },
+    "forms": [],
+    "steps": [
+      "Visit your bank branch and ask for the Kisan Credit Card application form.",
+      "Fill it with land, crop and family details.",
+      "Submit land records, Aadhaar and photographs.",
+      "The bank assesses the limit and issues the card.",
+      "Repay within the concessional window each season to keep the low interest."
+    ],
+    "documents": ["Aadhaar card", "Land records", "Passport-size photograph", "Bank account details"],
+    "warnings": [
+      "A KCC is a loan, not a grant — repay on schedule",
+      "Only use official branch channels; no agent should charge for this form"
+    ],
+    "official_url": "https://www.myscheme.gov.in/schemes/kcc",
+    "needs_verification": true
+  },
+  {
+    "id": "cghs",
+    "name": "CGHS — Central Government Health Scheme",
+    "profiles": ["govt_employee", "senior_citizen"],
+    "summary": "Health facilities for central government employees, pensioners and their dependants through CGHS dispensaries and empanelled hospitals.",
+    "benefits": [
+      "OPD treatment, medicines and specialist referrals through CGHS wellness centres",
+      "Cashless or reimbursement-based treatment at empanelled hospitals",
+      "Cover continues for pensioners after retirement, with contributions"
+    ],
+    "eligibility": [
+      "Serving central government employees covered by the scheme",
+      "CGHS pensioners and their eligible dependants",
+      "Certain autonomous-body employees as notified"
+    ],
+    "extra_costs": [
+      "Monthly or annual CGHS contribution for pensioners (slab-based)",
+      "Some treatments and investigations have fixed user charges",
+      "Outside the CGHS city: reimbursement rates apply instead of cashless"
+    ],
+    "where_to_go": {
+      "office": "Your nearest CGHS wellness centre, or the CGHS portal for card services",
+      "note": "For a new card, apply through your office (serving) or the CGHS city office (pensioner)"
+    },
+    "forms": [],
+    "steps": [
+      "Get the CGHS card application (your office or the CGHS city office will give the format).",
+      "Attach photographs and service / pension documents.",
+      "Submit at the CGHS city office and pay the contribution where applicable.",
+      "Collect the card and use the nearest wellness centre for treatment.",
+      "For specialist or hospital care, take the referral from the wellness centre first."
+    ],
+    "documents": ["Aadhaar card", "Service / pension documents", "Passport-size photographs", "Previous CGHS card, if any"],
+    "warnings": [
+      "Get the referral before admission to an empanelled hospital where required, or reimbursement can be cut",
+      "Check the current contribution slabs on cghs.gov.in — they are revised from time to time"
+    ],
+    "official_url": "https://cghs.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "ups-pension",
+    "name": "Unified Pension Scheme (UPS) / NPS pension",
+    "profiles": ["govt_employee"],
+    "summary": "Pension arrangements for central government employees under the National Pension System and the newer Unified Pension Scheme option.",
+    "benefits": [
+      "Assured pension option under UPS for eligible central government employees",
+      "Accumulated NPS corpus with market returns if you stay in NPS",
+      "Family pension and dearness relief features under UPS"
+    ],
+    "eligibility": [
+      "Central government employees covered by NPS who are eligible to choose UPS",
+      "Selection within the window notified by the government, at the start of service"
+    ],
+    "extra_costs": [
+      "Monthly employee contribution (salary-linked) plus the government share",
+      "Any gap contributions for prior service, where applicable"
+    ],
+    "where_to_go": {
+      "office": "Your office's DDO / establishment section and the NPS / UPS online portal",
+      "note": "Pensioners' queries are handled by the pension sanctioning authority of your department"
+    },
+    "forms": [],
+    "steps": [
+      "Ask your establishment section which pension option applies to your joining date.",
+      "Exercise the UPS option within the notified window, if eligible.",
+      "Verify your NPS statement on the portal every year.",
+      "At retirement, complete the pension papers with your office well in advance."
+    ],
+    "documents": ["Service book / HR records", "PAN", "Bank details", "Nomination forms"],
+    "warnings": [
+      "Pension choices may be irreversible after the window closes — read the official circular first",
+      "Verify everything on pensionersportal.gov.in; agents cannot speed up pension payments"
+    ],
+    "official_url": "https://pensionersportal.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "nmc-registration",
+    "name": "NMC registration (medical practitioners)",
+    "profiles": ["doctor"],
+    "summary": "Registration with the National Medical Commission / state medical councils, the licence to practise medicine in India.",
+    "benefits": [
+      "Legal licence to practise modern medicine in India",
+      "Registration number accepted for hospital jobs, prescriptions and certificates",
+      "Renewal keeps the licence active"
+    ],
+    "eligibility": [
+      "MBBS or higher degree from a recognised medical institution",
+      "Completed internship where required",
+      "Additional qualifications (PG, superspecialty) can be added to the registration"
+    ],
+    "extra_costs": [
+      "Registration and renewal fees set by the council",
+      "Document attestation and courier charges",
+      "PG / additional qualification endorsement fees"
+    ],
+    "where_to_go": {
+      "office": "National Medical Commission portal for the central register; state medical council for licences",
+      "note": "First registration is usually through the state council where your college is; NMC maintains the central register"
+    },
+    "forms": [],
+    "steps": [
+      "Create an account on the NMC / state council portal.",
+      "Fill the registration application with your qualification and internship details.",
+      "Upload degree, internship and identity documents.",
+      "Pay the prescribed fee and track the application.",
+      "Download the registration certificate once issued, and renew as notified."
+    ],
+    "documents": ["MBBS / PG degree certificates", "Internship completion certificate", "Aadhaar / passport", "Passport-size photograph and signatures"],
+    "warnings": [
+      "Practise only with a valid registration; expired registrations cause legal trouble",
+      "Beware of fake 'fast-track registration' agents — all processing is on the official portal"
+    ],
+    "official_url": "https://www.nmc.org.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "pmjay-empanelment",
+    "name": "PM-JAY empanelment (hospitals)",
+    "profiles": ["doctor"],
+    "summary": "For doctors running hospitals or nursing homes: empanelment with Ayushman Bharat PM-JAY to treat card-holder patients cashless.",
+    "benefits": [
+      "Cashless treatment for eligible patients, with packages paid to the hospital",
+      "A steady stream of card-holder patients",
+      "Standard rates published per package"
+    ],
+    "eligibility": [
+      "Hospital / nursing home with the required beds, registration and staff as per the empanelment guidelines",
+      "NABH / NABL accreditation or the state's alternative criteria",
+      "Facilities for the packages applied for"
+    ],
+    "extra_costs": [
+      "Application and inspection related charges, if any under state rules",
+      "Upgrades to meet package infrastructure requirements",
+      "Digital systems for claim submission"
+    ],
+    "where_to_go": {
+      "office": "State Health Agency (SHA) of your state, through the PM-JAY empanelment portal",
+      "note": "District level: the district health officer can guide the documents; decisions sit with the SHA"
+    },
+    "forms": [],
+    "steps": [
+      "Read the current empanelment guidelines on the state SHA website.",
+      "Apply online through the SHA / PM-JAY portal with hospital documents.",
+      "Prepare for inspection: records, staffing and packages.",
+      "Sign the memorandum after approval and start treating card holders.",
+      "Submit claims on the IT platform within the time limits.",
+      "Renew empanelment as notified."
+    ],
+    "documents": ["Hospital registration and licences", "Bed strength and staff details", "Accreditation certificates", "PAN, GST and bank details"],
+    "warnings": [
+      "Empanelment guidelines change; verify with your State Health Agency",
+      "Never pay an agent who 'guarantees' empanelment — the process is through the SHA"
+    ],
+    "official_url": "https://pmjay.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "nsp-scholarships",
+    "name": "National Scholarship Portal (NSP) scholarships",
+    "profiles": ["student"],
+    "summary": "One portal for most central and many state scholarships, from pre-matric to higher education.",
+    "benefits": [
+      "Scholarship amounts paid to the student's bank account",
+      "Central schemes (SC/ST/OBC/Minority/PwD) and state schemes in one place",
+      "Renewal applications for continuing students"
+    ],
+    "eligibility": [
+      "Varies by scheme: family income limits, category, marks and course",
+      "Aadhaar-linked bank account in the student's own name",
+      "Institute verification where required"
+    ],
+    "extra_costs": [
+      "Application is free",
+      "CSC service charge if you apply through a centre",
+      "Income / caste certificate fees where not already held"
+    ],
+    "where_to_go": {
+      "office": "Online at scholarships.gov.in; help at your college's scholarship cell or CSC",
+      "note": "Certificates are made at the tehsil / e-district portal of your state"
+    },
+    "forms": ["income-certificate"],
+    "steps": [
+      "Register on scholarships.gov.in with Aadhaar and bank details.",
+      "Match the scheme to your category, course and income limit.",
+      "Upload certificates and marksheets; get the institute to verify.",
+      "Track the application and renewal deadlines each year.",
+      "Keep the bank account active — dormant accounts bounce payments."
+    ],
+    "documents": ["Aadhaar", "Bank passbook", "Income certificate", "Caste / category certificate where applicable", "Marksheets and admission proof"],
+    "warnings": [
+      "Deadlines are strict; NSP does not accept late applications",
+      "Beware of fake scholarship websites that copy NSP's design — use scholarships.gov.in only"
+    ],
+    "official_url": "https://scholarships.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "vidya-lakshmi",
+    "name": "Vidya Lakshmi education loan (single window)",
+    "profiles": ["student"],
+    "summary": "One common application for education loans from multiple banks, with interest subsidy schemes where eligible.",
+    "benefits": [
+      "Apply to several banks with one form",
+      "Section 80E tax benefit on education loan interest",
+      "Interest subsidy for eligible families under central schemes"
+    ],
+    "eligibility": [
+      "Admission to a recognised course / institution",
+      "Co-applicant (usually a parent) with income proof",
+      "Category and income conditions for subsidy schemes"
+    ],
+    "extra_costs": [
+      "Processing fees vary by bank; many waive for certain schemes",
+      "Margin money and collateral as per the bank's rules for higher amounts"
+    ],
+    "where_to_go": {
+      "office": "Online at vidyalakshmi.co.in, then the bank branch",
+      "note": "The portal shares your application with the banks you choose"
+    },
+    "forms": [],
+    "steps": [
+      "Register on vidyalakshmi.co.in and fill the common educational loan form.",
+      "Choose the banks you want to apply to.",
+      "Complete the bank's documentation and interviews as they ask.",
+      "Check interest subsidy eligibility through the National Scholarship Portal.",
+      "Track sanction and disbursal; keep receipts for tax and subsidy."
+    ],
+    "documents": ["Admission letter", "Fee structure", "Marksheets", "Co-applicant income proof", "Aadhaar, PAN and address proof"],
+    "warnings": [
+      "Compare the total interest across banks, not just the EMI",
+      "Subsidy schemes have income cut-offs and deadlines — check on NSP"
+    ],
+    "official_url": "https://www.vidyalakshmi.co.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "ignoaps",
+    "name": "Old-age pension (NSAP / state pensions)",
+    "profiles": ["senior_citizen"],
+    "summary": "Monthly pensions for eligible senior citizens under the National Social Assistance Programme and state schemes.",
+    "benefits": [
+      "Monthly pension credited to the bank / post office account",
+      "Higher amounts in many states beyond the central share",
+      "Separate widow and disability pensions under the same programme"
+    ],
+    "eligibility": [
+      "Age 60+ (higher for some states), below-poverty-line or as per state criteria",
+      "Not covered by another government pension in most states",
+      "Bank or post office account and Aadhaar"
+    ],
+    "extra_costs": [
+      "Application is free",
+      "Bank account formalities, if you do not have one yet"
+    ],
+    "where_to_go": {
+      "office": "Gram panchayat / ward office or the state social welfare department portal; the block / tehsil office processes it",
+      "note": "Ask the panchayat secretary or ward councillor for your state's exact counter"
+    },
+    "forms": [],
+    "steps": [
+      "Collect the pension application format from the panchayat / ward office or the state portal.",
+      "Fill it with age, BPL and bank details and attach proofs.",
+      "Submit where directed; get a receipt or application number.",
+      "Track the sanction and report within a month if the pension does not start.",
+      "Complete the annual life certificate / verification on time."
+    ],
+    "documents": ["Age proof (Aadhaar, voter ID)", "BPL / income proof", "Bank / post office passbook", "Residence proof"],
+    "warnings": [
+      "Pensions stop if the annual certification is missed — mark the date",
+      "No fee is charged for the application; beware of touts at counters"
+    ],
+    "official_url": "https://nsap.nic.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "udyam-registration",
+    "name": "Udyam registration (MSME)",
+    "profiles": ["entrepreneur"],
+    "summary": "Free online registration for micro, small and medium businesses, unlocking priority-sector benefits.",
+    "benefits": [
+      "MSME identity used for subsidy, tender preference and collateral-free credit schemes",
+      "Priority sector lending benefits through banks",
+      "Delayed-payment protection from buyers under the MSME Act, where applicable"
+    ],
+    "eligibility": [
+      "Any enterprise meeting the MSME turnover and investment thresholds",
+      "Aadhaar and PAN of the owner / firm"
+    ],
+    "extra_costs": [
+      "Registration is free",
+      "CSC service fee only if you use a centre to file it"
+    ],
+    "where_to_go": {
+      "office": "Online at udyamregistration.gov.in",
+      "note": "Use the same PAN as your business; the portal fetches ITR and GST data automatically"
+    },
+    "forms": [],
+    "steps": [
+      "Open udyamregistration.gov.in and choose the new registration option.",
+      "Register with Aadhaar / PAN; the portal pulls your business data.",
+      "Fill investment and turnover details for your category.",
+      "Submit and download the Udyam certificate immediately.",
+      "Quote the Udyam number in bank and tender applications."
+    ],
+    "documents": ["Aadhaar", "PAN", "GST details (if registered)", "Bank account details"],
+    "warnings": [
+      "Only udyamregistration.gov.in is official; lookalikes sell 'certificates' that are worthless",
+      "Keep investment / turnover figures honest — benefits are verified before sanction"
+    ],
+    "official_url": "https://udyamregistration.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "pmegp",
+    "name": "PMEGP — subsidy for new micro-enterprises",
+    "profiles": ["entrepreneur", "worker"],
+    "summary": "Credit-linked subsidy for setting up manufacturing or service micro-enterprises, run through KVIC.",
+    "benefits": [
+      "Subsidy on the project cost: higher for special categories, lower for general",
+      "Margin money routed through the bank along with the loan",
+      "Training and hand-holding through KVIC / DIC"
+    ],
+    "eligibility": [
+      "Age 18+; individual, self-help group or cooperative",
+      "Only one subsidy per family under the scheme",
+      "New units only — existing units are not eligible"
+    ],
+    "extra_costs": [
+      "Your own contribution portion of the project cost",
+      "Project report preparation, if you hire a consultant (you can write it yourself)",
+      "Bank charges and insurance as per the lender"
+    ],
+    "where_to_go": {
+      "office": "Online at the PMEGP portal, then the KVIC / KVIB / DIC office and your bank",
+      "note": "The District Industry Centre (DIC) helps first-time applicants with the project file"
+    },
+    "forms": [],
+    "steps": [
+      "Open the PMEGP e-portal and register with your details.",
+      "Prepare a project report for your idea with cost and market estimates.",
+      "Apply online and choose the bank branch near you.",
+      "Attend the interview / EDP training if asked.",
+      "The bank sanctions the loan and releases the subsidy portion into the account."
+    ],
+    "documents": ["Aadhaar", "Project report", "Education / experience proof", "Category certificate (if applicable)", "Bank details"],
+    "warnings": [
+      "Scheme rules and subsidy percentages change; confirm with your DIC / KVIC office before spending",
+      "No consultant can 'guarantee' the bank's sanction — do not pay large advance fees"
+    ],
+    "official_url": "https://www.kviconline.gov.in/pmegpeportal/",
+    "needs_verification": true
+  },
+  {
+    "id": "pm-svanidhi",
+    "name": "PM SVANidhi — street vendor loans",
+    "profiles": ["worker", "entrepreneur"],
+    "summary": "Working-capital micro-loans for street vendors, with interest subsidy and higher tranches on repayment.",
+    "benefits": [
+      "Small working capital loan, with bigger repeat tranches on clean repayment",
+      "Interest subsidy credited to the account",
+      "Digital transaction incentives where applicable"
+    ],
+    "eligibility": [
+      "Street vendor with a certificate of vending or a letter of recommendation from the urban local body",
+      "Vendors who were surveyed by the urban local body"
+    ],
+    "extra_costs": [
+      "No collateral and no processing fee under the scheme"
+    ],
+    "where_to_go": {
+      "office": "Urban local body / municipal office for the vendor certificate, then any bank or the portal",
+      "note": "Ask at the ward office for the street vendor survey list and certificate"
+    },
+    "forms": [],
+    "steps": [
+      "Get the certificate of vending or recommendation letter from the urban local body.",
+      "Apply through the PM SVANidhi portal or your bank with the certificate.",
+      "Receive the first loan tranche after sanction.",
+      "Repay on schedule to unlock the next, larger tranche.",
+      "Use digital payments to earn the incentive where your bank supports it."
+    ],
+    "documents": ["Vendor certificate / recommendation letter", "Aadhaar", "Bank account", "Photograph of the vending spot where asked"],
+    "warnings": [
+      "The scheme has no processing fee; anyone demanding one is not official",
+      "Repay on time — repeat tranches depend on it"
+    ],
+    "official_url": "https://pmsvanidhi.mohua.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "eshram-benefits-scheme",
+    "name": "e-Shram card benefits",
+    "profiles": ["worker"],
+    "summary": "Registration that gives unorganised workers a national identity plus accident cover under PMSBY registration.",
+    "benefits": [
+      "e-Shram card as worker identity at government counters",
+      "Accident insurance cover linked through PMSBY where enrolled",
+      "Gateway to future welfare schemes for unorganised workers"
+    ],
+    "eligibility": [
+      "Unorganised sector worker aged 16–59",
+      "Aadhaar-linked mobile and bank account"
+    ],
+    "extra_costs": [
+      "Registration is free",
+      "PMSBY accident cover has a small annual premium where you enrol (often auto-debited by your bank)"
+    ],
+    "where_to_go": {
+      "office": "Online (eshram.gov.in) or any CSC (free)",
+      "note": "No physical office visit is needed"
+    },
+    "forms": ["eshram-card"],
+    "steps": [
+      "Register on eshram.gov.in with Aadhaar and OTP.",
+      "Download the e-Shram card PDF.",
+      "Check with your bank that PMSBY accident cover is active on your account.",
+      "Update occupation details if you change work."
+    ],
+    "documents": ["Aadhaar", "Bank passbook", "Mobile number linked to Aadhaar"],
+    "warnings": [
+      "CSCs must not charge for e-Shram registration — report any centre that does",
+      "The card alone does not pay benefits; check each linked scheme's rules"
+    ],
+    "official_url": "https://eshram.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "pmjay-general",
+    "name": "Ayushman Bharat PM-JAY health cover",
+    "profiles": ["citizen", "farmer", "worker", "senior_citizen"],
+    "summary": "Free hospitalisation cover for eligible families at empanelled hospitals, checked against government databases.",
+    "benefits": [
+      "Cashless hospitalisation at empanelled hospitals for eligible families",
+      "Covers the family on one card, including elderly members",
+      "Pre-existing conditions covered from day one of the scheme"
+    ],
+    "eligibility": [
+      "Families listed in SECC / state eligibility databases (check on the portal)",
+      "Senior citizens aged 70+ under the expanded cover where notified"
+    ],
+    "extra_costs": [
+      "The card is free",
+      "Non-covered items and non-empanelled hospitals are paid by the patient"
+    ],
+    "where_to_go": {
+      "office": "pmjay.gov.in, a CSC, or the help desk of any empanelled hospital",
+      "note": "Check the family on the beneficiary portal before going to hospital for planned treatment"
+    },
+    "forms": ["ayushman-card"],
+    "steps": [
+      "Check eligibility with Aadhaar and OTP on the beneficiary portal.",
+      "Generate and save the Ayushman card.",
+      "Confirm the hospital is empanelled for your treatment.",
+      "Show the card at the hospital help desk; they verify and admit cashless."
+    ],
+    "documents": ["Aadhaar", "Ration card / SECC record", "Mobile for OTP"],
+    "warnings": [
+      "Nobody should charge you for the card — it is free",
+      "Verify empanelment before admission; outside the network it is not cashless"
+    ],
+    "official_url": "https://pmjay.gov.in/",
+    "needs_verification": true
+  },
+  {
+    "id": "digilocker-scheme",
+    "name": "DigiLocker — keep documents safe",
+    "profiles": ["citizen", "student", "farmer", "govt_employee", "doctor", "senior_citizen", "entrepreneur", "worker"],
+    "summary": "Government digital wallet for PAN, licence, certificates and more, legally valid as digital copies.",
+    "benefits": [
+      "Fewer paper copies to carry and lose",
+      "Documents issued directly by departments, so they verify everywhere",
+      "Share with a verification QR instead of photocopies"
+    ],
+    "eligibility": ["Anyone with a mobile number or Aadhaar"],
+    "extra_costs": ["Free"],
+    "where_to_go": {
+      "office": "Online only (digilocker.gov.in or the official app)",
+      "note": "Some documents require your Aadhaar for the first-time fetch"
+    },
+    "forms": ["digilocker"],
+    "steps": [
+      "Create the account with mobile / Aadhaar and OTP.",
+      "Fetch your issued documents from departments.",
+      "Use the app's share feature when an office asks for a copy."
+    ],
+    "documents": ["Mobile number or Aadhaar"],
+    "warnings": [
+      "Use only digilocker.gov.in or the official app; lookalike sites steal logins"
+    ],
+    "official_url": "https://www.digilocker.gov.in/",
+    "needs_verification": true
+  }
+]

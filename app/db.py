@@ -1,4 +1,8 @@
-"""Knowledge base loading (Supabase with a silent local fallback) and usage logging."""
+"""Knowledge base loading (Supabase with a silent local fallback) and usage logging.
+
+forms.json may optionally live in Supabase; schemes.json and centres.json are
+local files. Everything is cached for five minutes.
+"""
 import json
 import os
 import threading
@@ -7,16 +11,16 @@ import time
 from . import config
 
 CACHE_TTL_SECONDS = 300
-_cache = {"data": None, "ts": 0.0}
+_cache = {"forms": None, "forms_ts": 0.0, "schemes": None, "centres": None, "ts": 0.0}
 _lock = threading.Lock()
 
 
-def _data_path():
-    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "forms.json")
+def _data_path(name):
+    return os.path.join(config.DATA_DIR, name)
 
 
-def _load_local():
-    with open(_data_path(), "r", encoding="utf-8") as fh:
+def _load_local_file(name):
+    with open(_data_path(name), "r", encoding="utf-8") as fh:
         return json.load(fh)
 
 
@@ -30,8 +34,8 @@ def get_forms():
     """Forms from Supabase when configured, else data/forms.json. Cached 5 minutes."""
     now = time.time()
     with _lock:
-        if _cache["data"] and now - _cache["ts"] < CACHE_TTL_SECONDS:
-            return _cache["data"]
+        if _cache["forms"] and now - _cache["forms_ts"] < CACHE_TTL_SECONDS:
+            return _cache["forms"]
 
     forms = None
     if config.SUPABASE_URL and config.SUPABASE_SERVICE_KEY:
@@ -42,11 +46,50 @@ def get_forms():
         except Exception:  # noqa: BLE001 - silent fallback is the contract
             forms = None
     if not forms:
-        forms = _load_local()
+        forms = _load_local_file("forms.json")
 
     with _lock:
-        _cache.update(data=forms, ts=now)
+        _cache["forms"] = forms
+        _cache["forms_ts"] = now
     return forms
+
+
+def _get_json_file(name, key):
+    now = time.time()
+    with _lock:
+        if _cache[key] and now - _cache["ts"] < CACHE_TTL_SECONDS:
+            return _cache[key]
+    data = _load_local_file(name)
+    with _lock:
+        _cache[key] = data
+        _cache["ts"] = now
+    return data
+
+
+def get_schemes():
+    """Support schemes for recommendations, from data/schemes.json."""
+    return _get_json_file("schemes.json", "schemes")
+
+
+def get_centres():
+    """Office/centre directory, from data/centres.json."""
+    return _get_json_file("centres.json", "centres")
+
+
+def find_form(form_id):
+    """One form from the knowledge base, or None."""
+    for form in get_forms():
+        if form.get("id") == form_id:
+            return form
+    return None
+
+
+def find_scheme(scheme_id):
+    """One scheme from the knowledge base, or None."""
+    for scheme in get_schemes():
+        if scheme.get("id") == scheme_id:
+            return scheme
+    return None
 
 
 def log_usage(kind, doc_type=None, lang=None, model=None, key_slot=None, latency_ms=None, ok=True):

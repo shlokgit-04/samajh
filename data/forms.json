@@ -4,12 +4,37 @@
     "name": "PAN card (new application)",
     "mode": "home",
     "mode_reason": "The application, e-KYC with Aadhaar, fee payment and e-PAN download are all online; no centre visit is required.",
+    "compulsory_documents": [
+      "Aadhaar card (used for e-KYC and as identity proof)",
+      "A recent passport-size photograph (digital upload)",
+      "A scanned signature (digital upload)",
+      "Mobile number linked to Aadhaar, for the OTP"
+    ],
+    "optional_documents": [
+      "An active email address (for the e-PAN PDF and updates)"
+    ],
+    "extra_documents": [
+      "If e-KYC fails, the portal asks for a physical acknowledgement and proof of identity and address by post"
+    ],
     "documents": [
       "Aadhaar card (used for e-KYC and as identity proof)",
       "A recent passport-size photograph (digital upload)",
       "A scanned signature (digital upload)",
       "Mobile number linked to Aadhaar, for the OTP",
       "An active email address"
+    ],
+    "costs": [
+      { "label": "Application fee", "value": "shown at checkout on the official portal; paid online" },
+      { "label": "Physical PAN card by post", "value": "optional extra; e-PAN is free to download after issue" }
+    ],
+    "where_to_go": {
+      "office": "Nowhere, if e-KYC works — online only",
+      "note": "If Aadhaar e-KYC fails, visit an authorised PAN service centre (find the list on the NSDL/UTIITSL portal)"
+    },
+    "processing_time": "e-PAN is usually issued within a few working days of a successful application.",
+    "warnings": [
+      "Apply only on the official NSDL or UTIITSL portal; other websites charge extra and are not official",
+      "Never pay a PAN fee to a personal UPI account; fees go to the portal"
     ],
     "steps": [
       "Open the official PAN application portal and choose New PAN for an Indian citizen (Form 49A) with e-KYC and e-sign.",
@@ -29,11 +54,35 @@
     "name": "Aadhaar (update address or demographic details)",
     "mode": "home",
     "mode_reason": "Address and demographic updates can be requested online on the myAadhaar portal with document upload; no centre visit is needed for an online update.",
+    "compulsory_documents": [
+      "Your Aadhaar number (12 digits) or Enrolment ID",
+      "The mobile number registered with Aadhaar, to receive the OTP",
+      "One valid proof of address (recent electricity or water bill, bank passbook, rent agreement, passport, or another document from the UIDAI list)"
+    ],
+    "optional_documents": [
+      "For a name or date-of-birth change: the supporting proof listed on the portal"
+    ],
+    "extra_documents": [
+      "Keep a scanned copy of the proof at hand; the portal rejects unclear uploads"
+    ],
     "documents": [
       "Your Aadhaar number (12 digits) or Enrolment ID",
       "The mobile number registered with Aadhaar, to receive the OTP",
       "One valid proof of address (recent electricity or water bill, bank passbook, rent agreement, passport, or another document from the UIDAI list)",
       "For a name or date-of-birth change, the supporting proof listed on the portal"
+    ],
+    "costs": [
+      { "label": "Online update fee", "value": "a small fee per update request, shown on the portal before payment" },
+      { "label": "Centre update fee", "value": "slightly higher if done at an Aadhaar centre" }
+    ],
+    "where_to_go": {
+      "office": "Online, via myAadhaar",
+      "note": "If your mobile number is not registered or the online update is rejected, visit an Aadhaar Seva Kendra with originals"
+    },
+    "processing_time": "Usually 7 to 30 days after submitting the request.",
+    "warnings": [
+      "Update Aadhaar only on myAadhaar or at an official Aadhaar centre",
+      "No one needs your OTP or Aadhaar number over a phone call; share neither"
     ],
     "steps": [
       "Open myAadhaar and log in with your Aadhaar number and the OTP sent to your registered mobile.",
@@ -53,10 +102,34 @@
     "name": "Voter ID (new registration, Form 6)",
     "mode": "partly_home",
     "mode_reason": "Form 6 is filled and submitted online with document uploads, but a Booth Level Officer may visit or call for verification before your name is added to the roll.",
+    "compulsory_documents": [
+      "One proof of age (birth certificate, school leaving certificate, Class 10 marksheet, or passport)",
+      "One proof of current address (electricity bill, water bill, rent agreement, bank passbook, or passport)",
+      "A recent passport-size photograph (digital upload)"
+    ],
+    "optional_documents": [
+      "Mobile number and email for status updates"
+    ],
+    "extra_documents": [
+      "If you have moved recently, keep the previous address proof too — it helps the officer trace your record"
+    ],
     "documents": [
       "One proof of age (birth certificate, school leaving certificate, Class 10 marksheet, or passport)",
       "One proof of current address (electricity bill, water bill, rent agreement, bank passbook, or passport)",
       "A recent passport-size photograph (digital upload)"
+    ],
+    "costs": [
+      { "label": "Registration", "value": "free on the official portal" },
+      { "label": "Photocopies for the officer visit", "value": "a few rupees at any copy shop" }
+    ],
+    "where_to_go": {
+      "office": "Online (Voters' Service Portal), then your doorstep for BLO verification",
+      "note": "No office visit is normally needed; the Booth Level Officer comes to you if verification is required"
+    },
+    "processing_time": "Usually a few weeks; you can track it with your acknowledgement number.",
+    "warnings": [
+      "You can be registered only where you actually live; false addresses can be rejected",
+      "e-EPIC download is free; never pay a website for a voter card"
     ],
     "steps": [
       "Create an account on the Voters' Service Portal with your mobile number.",
@@ -76,11 +149,38 @@
     "name": "Passport (fresh application)",
     "mode": "partly_home",
     "mode_reason": "The form and appointment booking are online, but you must appear in person at a Passport Seva Kendra for document verification, photograph and biometrics.",
+    "compulsory_documents": [
+      "Proof of address (Aadhaar card, electricity bill, bank passbook, rent agreement, or another document from the portal's list)",
+      "Proof of date of birth (birth certificate, Class 10 certificate, or another document from the portal's list)",
+      "Aadhaar card"
+    ],
+    "optional_documents": [
+      "PAN card or voter ID (extra photo ID helps)",
+      "Old passport or citizenship documents, if applicable"
+    ],
+    "extra_documents": [
+      "Carry photocopies of every original you take to the centre",
+      "A passport-size photograph as a backup even though the photo is taken at the centre"
+    ],
     "documents": [
       "Proof of address (Aadhaar card, electricity bill, bank passbook, rent agreement, or another document from the portal's list)",
       "Proof of date of birth (birth certificate, Class 10 certificate, or another document from the portal's list)",
       "Aadhaar card",
       "Old passport or citizenship documents, if applicable"
+    ],
+    "costs": [
+      { "label": "Application fee (36-page booklet)", "value": "shown on the portal at booking; paid online" },
+      { "label": "Tatkal option", "value": "higher fee for urgent processing, if eligible" },
+      { "label": "Travel and photocopies for the centre visit", "value": "plan a little extra for the appointment day" }
+    ],
+    "where_to_go": {
+      "office": "Passport Seva Kendra (PSK) or Post Office PSK in your city",
+      "note": "You must visit the centre on your booked appointment day with originals; find your nearest one on the Passport Seva portal"
+    },
+    "processing_time": "Often several weeks including police verification; Tatkal is faster.",
+    "warnings": [
+      "Appointments are free to book; agents who promise 'confirmed slots' for money are not official",
+      "Never share OTPs or full documents with touts outside the centre"
     ],
     "steps": [
       "Register on the Passport Seva portal and log in.",
@@ -100,12 +200,39 @@
     "name": "Learner's Licence",
     "mode": "partly_home",
     "mode_reason": "Application, fee payment and in many states the test can be completed online through Parivahan, but a visit to the RTO is needed for document verification and biometrics before the licence is issued.",
+    "compulsory_documents": [
+      "Proof of age (birth certificate, Class 10 certificate, passport, or similar)",
+      "Proof of address (Aadhaar card, electricity bill, rent agreement, or similar)",
+      "Passport-size photographs",
+      "Aadhaar number, for e-KYC where your state supports it"
+    ],
+    "optional_documents": [
+      "Form 1 self-declaration of physical fitness (usually filled online)",
+      "Form 1A medical certificate, where the portal requires it (older applicants, transport category)"
+    ],
+    "extra_documents": [
+      "Keep the fee receipt and application number handy for the RTO visit"
+    ],
     "documents": [
       "Proof of age (birth certificate, Class 10 certificate, passport, or similar)",
       "Proof of address (Aadhaar card, electricity bill, rent agreement, or similar)",
       "Passport-size photographs",
       "Aadhaar number, for e-KYC where your state supports it",
       "Form 1 self-declaration of physical fitness (Form 1A medical certificate where required)"
+    ],
+    "costs": [
+      { "label": "Learner's licence fee", "value": "shown on Parivahan at payment; varies a little by state" },
+      { "label": "Online test slot", "value": "small fee where charged" },
+      { "label": "Medical certificate (if asked)", "value": "doctor's fee at any registered clinic" }
+    ],
+    "where_to_go": {
+      "office": "Online (Parivahan / Sarathi), then your local RTO",
+      "note": "Most states allow the learner's test from home; biometrics and verification need an RTO visit"
+    },
+    "processing_time": "Learner's licence is often issued within days of passing the test; the RTO visit may need a prior slot.",
+    "warnings": [
+      "Use only parivahan.gov.in or your state transport website; many lookalike sites charge double",
+      "The learner's licence is valid for six months and you must carry it while learning"
     ],
     "steps": [
       "Open the Parivahan Sarathi portal and choose Apply for Learner Licence.",
@@ -118,6 +245,384 @@
     "fee_note": "See the official portal for the current fee.",
     "official_url": "https://parivahan.gov.in",
     "source_urls": ["https://parivahan.gov.in"],
+    "needs_verification": true
+  },
+  {
+    "id": "ration-card-new",
+    "name": "Ration card (new / add family member)",
+    "mode": "partly_home",
+    "mode_reason": "Many states accept the application online on the state food and civil supplies portal, but verification (sometimes a home visit) happens at the local office before approval.",
+    "compulsory_documents": [
+      "Aadhaar of every family member to be included",
+      "Proof of address (electricity bill, rent agreement, or similar)",
+      "Bank passbook of the head of the family, for cash-transfer linked benefits"
+    ],
+    "optional_documents": [
+      "Previous ration card or surrender certificate, if shifting from another state",
+      "Passport-size photographs of family members, where the state portal asks"
+    ],
+    "extra_documents": [
+      "If newly married, the marriage certificate helps when adding a spouse",
+      "For a newborn, the birth certificate or hospital discharge slip speeds up the addition"
+    ],
+    "documents": [
+      "Aadhaar of every family member to be included",
+      "Proof of address (electricity bill, rent agreement, or similar)",
+      "Bank passbook of the head of the family, for cash-transfer linked benefits"
+    ],
+    "costs": [
+      { "label": "Application", "value": "usually free or a nominal fee set by your state" },
+      { "label": "Photocopies", "value": "a few rupees locally" }
+    ],
+    "where_to_go": {
+      "office": "Your state food and civil supplies portal, then the local ration / tehsil office for verification",
+      "note": "Where is your ration office? Ask at the gram panchayat or ward office; find district offices through the state portal"
+    },
+    "processing_time": "Usually a few weeks, including field verification.",
+    "warnings": [
+      "One family can hold only one card in most states; holding two can attract cancellation",
+      "Do not pay middlemen — the application and verification are free or nominal"
+    ],
+    "steps": [
+      "Open your state's food and civil supplies portal and choose the new ration card / add member option.",
+      "Fill the family details exactly as on each member's Aadhaar.",
+      "Upload the Aadhaar and address proofs for every member.",
+      "Submit and note the application or reference number.",
+      "Cooperate with verification if an inspector visits or calls.",
+      "Collect the card or download the e-ration card once approved, depending on your state."
+    ],
+    "fee_note": "Varies by state; see the state portal for the current fee.",
+    "official_url": "https://nfsa.gov.in/",
+    "source_urls": ["https://nfsa.gov.in/", "https://www.myscheme.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "income-certificate",
+    "name": "Income certificate",
+    "mode": "partly_home",
+    "mode_reason": "The form is filed online on the state e-district portal or at a CSC; the certificate is issued after the tehsildar or revenue office verifies your income details.",
+    "compulsory_documents": [
+      "Aadhaar card",
+      "Proof of address",
+      "Self-declaration or affidavit of annual family income",
+      "Salary slips, Form 16, or ITR (if salaried), or a patwari / village officer report (if agriculture or self-employed)"
+    ],
+    "optional_documents": [
+      "Ration card (accepted as address and family proof in many states)",
+      "Passport-size photograph, where the portal asks"
+    ],
+    "extra_documents": [
+      "Keep last year's income certificate, if you have one — it helps the office cross-check"
+    ],
+    "documents": [
+      "Aadhaar card",
+      "Proof of address",
+      "Self-declaration or affidavit of annual family income",
+      "Salary proof: salary slips, Form 16, or ITR; agriculture or self-employed: revenue officer report"
+    ],
+    "costs": [
+      { "label": "Application fee", "value": "small fee set by your state (often free for some categories)" },
+      { "label": "CSC service charge", "value": "a service fee if you apply through a Common Service Centre instead of yourself" },
+      { "label": "Affidavit / stamp paper (if needed)", "value": "price of the stamp paper at a licensed vendor" }
+    ],
+    "where_to_go": {
+      "office": "State e-district portal, Common Service Centre (CSC), or the tehsil / revenue office",
+      "note": "Find your nearest CSC or tehsil office through your state portal; in villages the gram panchayat office can guide you"
+    },
+    "processing_time": "Commonly 7 to 30 days depending on the state and verification load.",
+    "warnings": [
+      "The income certificate is often valid for one year only — check the date before submitting it somewhere",
+      "A wrong income declaration can lead to rejection and cancellation of other benefits"
+    ],
+    "steps": [
+      "Open your state's e-district portal and log in (or visit a CSC).",
+      "Fill the income certificate application with correct family and income details.",
+      "Upload Aadhaar, address proof and income proof.",
+      "Pay the fee shown and note the application number.",
+      "Track the application; supply any extra document the office asks for.",
+      "Download the digitally signed certificate once approved."
+    ],
+    "fee_note": "Varies by state; see the state portal for the current fee.",
+    "official_url": "https://edistrict.gov.in/",
+    "source_urls": ["https://edistrict.gov.in/", "https://www.myscheme.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "driving-licence-renewal",
+    "name": "Driving licence (renewal)",
+    "mode": "partly_home",
+    "mode_reason": "The renewal form and fee are handled online on Parivahan, but most RTOs need a visit for a photograph, signature and sometimes a medical form before printing the renewed licence.",
+    "compulsory_documents": [
+      "Existing driving licence (original and copy)",
+      "Aadhaar card and proof of address, if changed since the last licence",
+      "Form 1 self-declaration of physical fitness"
+    ],
+    "optional_documents": [
+      "Form 1A medical certificate (needed for older applicants and transport licences)",
+      "Passport-size photographs"
+    ],
+    "extra_documents": [
+      "Keep the old licence safe — it is stamped or cancelled during renewal"
+    ],
+    "documents": [
+      "Existing driving licence (original and copy)",
+      "Aadhaar card and proof of address, if changed since the last licence",
+      "Form 1 self-declaration of physical fitness",
+      "Form 1A medical certificate where required",
+      "Passport-size photographs"
+    ],
+    "costs": [
+      { "label": "Renewal fee", "value": "shown on Parivahan at payment; differs for two-wheeler / four-wheeler (and with a late fee if expired long ago)" },
+      { "label": "Medical certificate (if asked)", "value": "doctor's fee at any registered clinic" }
+    ],
+    "where_to_go": {
+      "office": "Online (Parivahan), then your local RTO if the state asks for a visit",
+      "note": "Apply before expiry — many RTOs require the renewal application within 30 days of the expiry date"
+    },
+    "processing_time": "Often days to a few weeks; some states apply a grace period after expiry.",
+    "warnings": [
+      "Driving with an expired licence can mean a fine; renew as soon as it expires if you missed the window",
+      "Some states charge a late fee and a retest if the licence has been expired for over a year"
+    ],
+    "steps": [
+      "Open Parivahan Sarathi and choose Services on Driving Licence, then Renewal.",
+      "Enter your licence number and date of birth to fetch the record.",
+      "Fill the form, upload documents where asked, and pay the fee shown.",
+      "Book a slot at your RTO if your state requires a visit.",
+      "Visit the RTO with originals and photographs if asked.",
+      "Download the renewed licence digitally or collect it when ready."
+    ],
+    "fee_note": "See the official portal for the current fee.",
+    "official_url": "https://parivahan.gov.in",
+    "source_urls": ["https://parivahan.gov.in"],
+    "needs_verification": true
+  },
+  {
+    "id": "birth-certificate",
+    "name": "Birth certificate",
+    "mode": "partly_home",
+    "mode_reason": "The application is filed online on the municipal or e-district portal, but issuing the certificate involves the registrar's office checking hospital records, so one visit may be needed for old or missing registrations.",
+    "compulsory_documents": [
+      "Hospital discharge slip or birth report with the date and place of birth",
+      "Parents' Aadhaar cards",
+      "Proof of residence in the municipal area"
+    ],
+    "optional_documents": [
+      "Marriage certificate of the parents, where asked",
+      "Ration card or address proof of the family"
+    ],
+    "extra_documents": [
+      "For births older than a year, an affidavit and a school certificate may be required; the fee is also higher"
+    ],
+    "documents": [
+      "Hospital discharge slip or birth report with the date and place of birth",
+      "Parents' Aadhaar cards",
+      "Proof of residence in the municipal area"
+    ],
+    "costs": [
+      { "label": "Registration within 21 days", "value": "usually free or nominal" },
+      { "label": "Late registration", "value": "higher fee, and may need an affidavit and the registrar's permission" },
+      { "label": "Extra copies", "value": "small charge per copy at most municipal offices" }
+    ],
+    "where_to_go": {
+      "office": "The municipal corporation / nagar palika / gram panchayat that covers the place of birth",
+      "note": "Hospitals usually file the birth within 21 days; if you are registering late, apply on the municipal portal or at the registrar's office"
+    },
+    "processing_time": "Digital copies are often issued within days; late registrations take longer.",
+    "warnings": [
+      "Register as early as possible — after 21 days the process becomes slower and costlier",
+      "Keep at least two certified copies; schools and passports ask for them"
+    ],
+    "steps": [
+      "Find the birth registration portal of your municipal corporation or the e-district portal.",
+      "Fill the birth details exactly as on the hospital record.",
+      "Upload the hospital slip, parents' Aadhaar and residence proof.",
+      "Pay the fee shown and note the application number.",
+      "Visit the registrar's office if asked for verification (needed for old births).",
+      "Download or collect the signed birth certificate."
+    ],
+    "fee_note": "Varies by municipality; see the local portal for the current fee.",
+    "official_url": "https://crsorgi.gov.in/",
+    "source_urls": ["https://crsorgi.gov.in/", "https://edistrict.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "ayushman-card",
+    "name": "Ayushman Bharat card (PM-JAY health cover)",
+    "mode": "home",
+    "mode_reason": "Eligibility is checked against government databases and the card is generated online from Aadhaar and mobile OTP; empanelled hospitals accept the card directly.",
+    "compulsory_documents": [
+      "Aadhaar card",
+      "Mobile number linked to Aadhaar for the OTP",
+      "Ration card or SECC / state database entry showing eligibility"
+    ],
+    "optional_documents": [
+      "Panchayat or ward certificate, if your name is not found in the automatic eligibility check"
+    ],
+    "extra_documents": [
+      "Elderly family members can be verified with a face scan if there is no OTP phone; do this at a CSC or empanelled hospital help desk"
+    ],
+    "documents": [
+      "Aadhaar card",
+      "Mobile number linked to Aadhaar for the OTP",
+      "Ration card or SECC / state database entry showing eligibility"
+    ],
+    "costs": [
+      { "label": "The card itself", "value": "free" },
+      { "label": "CSC service charge for help", "value": "a service fee if you use a Common Service Centre instead of the portal" }
+    ],
+    "where_to_go": {
+      "office": "Online (beneficiary portal), a Common Service Centre (CSC), or the help desk of any empanelled hospital",
+      "note": "Treatment cashless at empanelled government and private hospitals; the hospital help desk can verify your family"
+    },
+    "processing_time": "The card is generated immediately after successful e-KYC.",
+    "warnings": [
+      "The scheme is free; anyone charging a 'membership fee' for a new card is not official",
+      "Check hospital empanelment before admission; not every private hospital is in the network"
+    ],
+    "steps": [
+      "Open the PM-JAY beneficiary portal or go to a CSC / empanelled hospital help desk.",
+      "Enter Aadhaar and complete the OTP or face verification.",
+      "Check the family members listed and their details.",
+      "Generate the Ayushman card PDF and save it on your phone.",
+      "Carry the card and Aadhaar for any cashless treatment."
+    ],
+    "fee_note": "The scheme itself is free; see the official portal for details.",
+    "official_url": "https://pmjay.gov.in/",
+    "source_urls": ["https://pmjay.gov.in/", "https://beneficiary.nha.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "pm-kisan",
+    "name": "PM-KISAN registration (farmer income support)",
+    "mode": "partly_home",
+    "mode_reason": "Self-registration is online on the PM-KISAN portal, but land records must match and the local patwari / agriculture officer verifies the details before the first instalment.",
+    "compulsory_documents": [
+      "Aadhaar card",
+      "Land records (khatauni / 7-12 extract / khasra) showing your name as owner",
+      "Bank account passbook linked to Aadhaar (account must be in your name)"
+    ],
+    "optional_documents": [
+      "Mobile number for instalment SMS updates"
+    ],
+    "extra_documents": [
+      "Inherited land? First get the mutation (namantaran) updated to your name in land records, then apply"
+    ],
+    "documents": [
+      "Aadhaar card",
+      "Land records (khatauni / 7-12 extract / khasra) showing your name as owner",
+      "Bank account passbook linked to Aadhaar (account must be in your name)"
+    ],
+    "costs": [
+      { "label": "Registration", "value": "free on the official portal" },
+      { "label": "Land record copy / mutation updates", "value": "nominal fee at the tehsil or land records office" }
+    ],
+    "where_to_go": {
+      "office": "Online (pmkisan.gov.in) or the nearest agriculture / CSC centre for help; land record work at the tehsil office",
+      "note": "The patwari or revenue officer may verify the plot before approval in some states"
+    },
+    "processing_time": "Weeks to a couple of months, depending on verification.",
+    "warnings": [
+      "One family can receive benefits under one member's name only; duplicate applications get rejected",
+      "Check your status online before paying anyone to 'fix' a stalled application"
+    ],
+    "steps": [
+      "Open pmkisan.gov.in and choose New Farmer Registration.",
+      "Enter your Aadhaar and the mobile number you can receive OTPs on.",
+      "Fill land and bank details exactly as on the records.",
+      "Upload the land record copy where asked.",
+      "Submit and note the registration number.",
+      "Check the beneficiary status page; complete any patwari verification if requested."
+    ],
+    "fee_note": "Registration is free; see the official portal for current benefit amounts.",
+    "official_url": "https://pmkisan.gov.in/",
+    "source_urls": ["https://pmkisan.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "eshram-card",
+    "name": "e-Shram card (unorganised worker registration)",
+    "mode": "home",
+    "mode_reason": "The whole registration is online with Aadhaar and OTP; when an OTP phone is not available, a nearest CSC (free of charge) completes it.",
+    "compulsory_documents": [
+      "Aadhaar card",
+      "Mobile number linked to Aadhaar for the OTP",
+      "Bank account passbook"
+    ],
+    "optional_documents": [
+      "Ration card or address proof, where the form asks"
+    ],
+    "extra_documents": [
+      "Keep the occupation details ready (type of work and approximate monthly earning) — the form asks"
+    ],
+    "documents": [
+      "Aadhaar card",
+      "Mobile number linked to Aadhaar for the OTP",
+      "Bank account passbook"
+    ],
+    "costs": [
+      { "label": "Registration", "value": "free; CSCs cannot charge for e-Shram registration" },
+      { "label": "Delivery of the physical card", "value": "not needed — the e-card download is enough everywhere" }
+    ],
+    "where_to_go": {
+      "office": "Online (eshram.gov.in), or any Common Service Centre (free) if you have no smartphone",
+      "note": "The e-Shram card is accepted as worker proof at many government counters"
+    },
+    "processing_time": "The card is issued immediately with the UAN and downloadable PDF.",
+    "warnings": [
+      "Registration is free; any CSC or person charging a fee for e-Shram is violating the rules — report them",
+      "Your e-Shram card is not a job guarantee; it is a worker identity and accident insurance gateway"
+    ],
+    "steps": [
+      "Open eshram.gov.in and log in with your Aadhaar and OTP (or ask a CSC to do it free).",
+      "Fill your personal, occupation and bank details.",
+      "Read the declaration and submit.",
+      "Note the e-Shram card number (UAN).",
+      "Download the e-card PDF and save it on your phone."
+    ],
+    "fee_note": "Registration is free; see the official portal.",
+    "official_url": "https://eshram.gov.in/",
+    "source_urls": ["https://eshram.gov.in/"],
+    "needs_verification": true
+  },
+  {
+    "id": "digilocker",
+    "name": "DigiLocker (digital document wallet)",
+    "mode": "home",
+    "mode_reason": "DigiLocker accounts are created online with Aadhaar or mobile number and documents are issued into the wallet directly by government departments.",
+    "compulsory_documents": [
+      "Aadhaar number, or a mobile number for the simpler sign-up",
+      "Mobile number for OTP verification"
+    ],
+    "optional_documents": [],
+    "extra_documents": [
+      "You can pull PAN, driving licence, school certificates and more into the wallet once verified"
+    ],
+    "documents": [
+      "Aadhaar number, or a mobile number for the simpler sign-up",
+      "Mobile number for OTP verification"
+    ],
+    "costs": [
+      { "label": "Account and most documents", "value": "free" }
+    ],
+    "where_to_go": {
+      "office": "Online only",
+      "note": "Legally accepted digital copies: DigiLocker documents are valid under the IT Act rules"
+    },
+    "processing_time": "Immediate.",
+    "warnings": [
+      "Open DigiLocker only at digilocker.gov.in or the official app; lookalike sites can steal Aadhaar details"
+    ],
+    "steps": [
+      "Open digilocker.gov.in or install the official app.",
+      "Sign up with your mobile or Aadhaar and verify the OTP.",
+      "Set a PIN and complete your profile.",
+      "Choose the Issued Documents tab, pick a department, and fetch your documents.",
+      "Download or share documents with a verification QR when asked anywhere."
+    ],
+    "fee_note": "Free; see the official portal.",
+    "official_url": "https://www.digilocker.gov.in/",
+    "source_urls": ["https://www.digilocker.gov.in/"],
     "needs_verification": true
   }
 ]

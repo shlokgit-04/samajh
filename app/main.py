@@ -139,7 +139,7 @@ async def chat(req: ChatRequest):
     started = time.monotonic()
 
     for _round in range(4):
-        if _round and time.monotonic() - started > 70:
+        if _round and time.monotonic() - started > 45:
             break
         text, trace = await asyncio.to_thread(client.call, contents)
         last_trace = trace

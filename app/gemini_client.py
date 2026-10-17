@@ -193,7 +193,7 @@ class GemmaClient:
             if client is None:
                 client = genai.Client(
                     api_key=key,
-                    http_options=types.HttpOptions(timeout=12 * 1000),
+                    http_options=types.HttpOptions(timeout=30 * 1000),
                 )
                 self._clients[key] = client
             return client
